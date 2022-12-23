@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
+body {
+  margin: 100px;
+  background: #eee;
+  font-family: Verdana;
+}
+
+/* card */
+.card {
+  /*width: 562.5px;*/
+  /*height: 388.5px;*/
+  width: 40vw;
+  aspect-ratio: 375 / 259;
+  margin: 0 auto;
+  position: relative;
+  perspective: 1400px;
+  left: 0;
+  transition: all 1s;
+}
+
+/* left card */
+.left-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  box-shadow: 5px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform-origin: 0 0;
+}
+
+.left-card img {
+  width: 100%;
+}
+
+.left-card .card-front,
+.left-card .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.left-card .card-back {
+  background: #f4f4f4;
+  transform: rotateY(180deg);
+}
+
+.card.open .left-card {
+  transform: rotateY(-180deg);
+}
+
+.card.open {
+  left: calc(40vw / 2);
+}
+
+/* open card */
+
+/* right card */
+.right-card {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.right-card h2 {
+  font-family: "Bad Script", sans-serif;
+  color: #83220c;
+}
+
+@media only screen and (max-width: 400px) {
+  .right-card h2 {
+    font-size: .5rem;
+    margin: 3px 0;
+  }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 500px) {
+  .right-card h2 {
+    font-size: .6rem;
+  }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 600px) {
+  .right-card h2 {
+    font-size: .8rem;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 890px) {
+  .right-card h2 {
+    font-size: 1rem;
+  }
+}
